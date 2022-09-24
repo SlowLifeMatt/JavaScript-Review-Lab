@@ -256,7 +256,7 @@ if( num < 5) {
 
 // 7.
 
-//console.log('Tom is looking fierce in a', thomsCloset[0][1],',' ,thomsCloset[1][1], 'and',thomsCloset[2][1],'!')
+//console.log('Tom is looking fierce in a', thomsCloset[0][0],',' ,thomsCloset[1][1], 'and',thomsCloset[2][1],'!')
 
 // 8.
 
