@@ -117,7 +117,7 @@ for (let i = 1; i<= 100; i++) {
 
 let bank_account = 0
 for (let i = 1; i <= 10; i++) {
-    bank_account += i * 2;
+    bank_account += i;
 }
 console.log("Your bank account balance is $" + bank_account + ".")
 let bank_account = 0
@@ -159,19 +159,19 @@ ourClass.push("Cloud City");
 
 const myArray = [5, 10, 500, 20];
 myArray.push("Egon", "Tom");
-console.log(myArray);
+//console.log(myArray);
 
 myArray.shift();
-console.log(myArray);
+//console.log(myArray);
 
 myArray.unshift("Bob Marley");
-console.log(myArray)
+//console.log(myArray)
 
 myArray.pop()
-console.log(myArray)
+//console.log(myArray)
 
 myArray.reverse()
-console.log(myArray)
+//console.log(myArray)
 
 //5. Mutate means to change. The .reverse, returned the array in reverse.
 
