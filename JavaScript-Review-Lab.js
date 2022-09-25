@@ -44,8 +44,8 @@ console.log(true || false);
 console.log(false || false && false && false && false || true);
 console.log(false == false)
 console.log(e === 'Kevin');
-console.log(a <= b !== c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations)
-console.log(a != a !== d); // note: the answer is a simple arithmetic equation, not something "weird"
+console.log(a + b === c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations)
+console.log(a * a === d); // note: the answer is a simple arithmetic equation, not something "weird"
 console.log(48 == '48');
 
 // D. The farm
@@ -120,7 +120,7 @@ for (let i = 1; i <= 10; i++) {
     bank_account += i;
 }
 console.log("Your bank account balance is $" + bank_account + ".")
-let bank_account = 0
+  bank_account = 0
 for (let i = 1; i <= 100; i++) {
     bank_account += i * 2;
 }
@@ -150,7 +150,7 @@ console.log(randomThings)
 
 const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
     // console.log(ourClass[2])
-ourClass [4] = "Octocat" ;
+    ourClass[ourClass.length-1] ='Octocat'
     console.log(ourClass);
 ourClass.push("Cloud City");
     console.log(ourClass)
@@ -186,7 +186,7 @@ console.log("little number")
 
 //G. Monkey in the Middle
 
-let num = 6;
+  num = 6;
 if( num < 5) {
     console.log("little number")
 } else if (num > 10) {
@@ -256,7 +256,7 @@ if( num < 5) {
 
 // 7.
 
-//console.log('Tom is looking fierce in a', thomsCloset[0][0],',' ,thomsCloset[1][1], 'and',thomsCloset[2][1],'!')
+console.log(`Thom is looking fierce in a ${thomsCloset[0][0]}, ${thomsCloset[1][1]}, ${thomsCloset[2][1]}`)
 
 // 8.
 
@@ -266,7 +266,7 @@ thomsCloset[1].splice(2,1,'Footie Pajamas')
 // IV. Functions
 
 // A. printGreeting
-
+// More practice couldn't hurt 
 let printGreeting = function(name){
   return 'Hello there, ' + name + '!'
 }
@@ -295,15 +295,15 @@ function isVowel(char) {
     let vowels = new Array("a", "e", "i", "o", "u");
     let isVowel = false;
 
-    for (a in vowels) {
-      if (vowels[a] == char) {
+    for (let a in vowels) {
+      if (vowels[a] == char.toLowerCase()) {
         isVowel = true;
       }
     }
     return isVowel;
   }
 }
-console.log(isVowel("p"))
+console.log(isVowel("A"))
 
 // E. getTwoLengths
 
@@ -317,15 +317,15 @@ console.log(getTwoLengths("Hank", "hippopopalous"));
 
 // F. getMultipleLengths
 
-let arrayOfStrings = ["hello" , "what", "is", "up", "dude"]
-let getMultipleLengths = function(arrayOfStrings) {
+let arrayStrings = ["hello" , "what", "is", "up", "dude"]
+let getMultipleLengths = function(arrayStrings) {
   let stringLength = []
-  for (let i = 0; i < arrayOfStrings.length; i++) {
-    stringLength.push(arrayOfStrings[i].length)
+  for (let i = 0; i < arrayStrings.length; i++) {
+    stringLength.push(arrayStrings[i].length)
   }
   return stringLength
 }
-console.log(getMultipleLengths(arrayOfStrings))
+console.log(getMultipleLengths(arrayStrings))
 
 // G. maxOfThree
 
@@ -356,6 +356,11 @@ console.log(largest)
 
 // H. printLongestWord
 
+//  Two methods to solve questions
+//  const printLongestWord = (arr) => {
+//   const sorted = arr.sort((a,b) => b.length = a.length)
+//   return sorted[0]
+// }
 let arrayOfStrings = ["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]
 let printLongestWord = function(arrayOfStrings) {
   let longestWord = []
