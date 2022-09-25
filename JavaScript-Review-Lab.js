@@ -17,6 +17,8 @@
 let firstVariable = "Hello World";
 firstVariable = 10;
 let secondVariable = firstVariable;
+
+//:) this should be something like secondVariable = 'another string'
 secondVariable = secondVariable.toString()
 
 // console.log(firstVariable)
@@ -46,9 +48,15 @@ console.log(false == false)
 console.log(e === 'Kevin');
 console.log(a <= b !== c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations)
 console.log(a != a !== d); // note: the answer is a simple arithmetic equation, not something "weird"
+
+///with arithemetic
+  console.log(a + b === c); 
+  console.log(a * a === d);
+
 console.log(48 == '48');
 
 // D. The farm
+//nice job writing a function for this one
 
 let animalType = "cow"
 function checkIfCow(animal) {
@@ -120,7 +128,9 @@ for (let i = 1; i <= 10; i++) {
     bank_account += i;
 }
 console.log("Your bank account balance is $" + bank_account + ".")
-let bank_account = 0
+
+//can't use let twice, just remove let to make bank_account 0 again
+bank_account = 0
 for (let i = 1; i <= 100; i++) {
     bank_account += i * 2;
 }
@@ -150,6 +160,9 @@ console.log(randomThings)
 
 const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
     // console.log(ourClass[2])
+//can access the last value of array like:
+ourClass[ourClass.length - 1] = 'Octocat';
+
 ourClass [4] = "Octocat" ;
     console.log(ourClass);
 ourClass.push("Cloud City");
@@ -185,8 +198,8 @@ console.log("little number")
 }
 
 //G. Monkey in the Middle
-
-let num = 6;
+//removed error by removing let
+num = 6;
 if( num < 5) {
     console.log("little number")
 } else if (num > 10) {
@@ -258,6 +271,10 @@ if( num < 5) {
 
 //console.log('Tom is looking fierce in a', thomsCloset[0][0],',' ,thomsCloset[1][1], 'and',thomsCloset[2][1],'!')
 
+//this might make life easier with template literals
+console.log(`Thom is looking fierce in a ${thomsCloset[0][0]}, ${thomsCloset[1][1]}, and a ${thomsCloset[2][1]}`)
+
+
 // 8.
 
 thomsCloset[1].splice(2,1,'Footie Pajamas')
@@ -289,21 +306,23 @@ function calculateCube(n) {
 console.log(calculateCube(5))
 
 // D. isVowel
+//you can control user input to better match your vowel array with toLowerCase() in case user enters 'A'
+
 
 function isVowel(char) {
   if (char.length ==1) {
     let vowels = new Array("a", "e", "i", "o", "u");
     let isVowel = false;
-
-    for (a in vowels) {
-      if (vowels[a] == char) {
+    //added let to remove constant variable error
+    for (let a in vowels) {
+      if (vowels[a] == char.toLowerCase()) {
         isVowel = true;
       }
     }
     return isVowel;
   }
 }
-console.log(isVowel("p"))
+console.log(isVowel("A"))
 
 // E. getTwoLengths
 
@@ -316,16 +335,17 @@ let getTwoLengths = function(x,y){
 console.log(getTwoLengths("Hank", "hippopopalous"));
 
 // F. getMultipleLengths
+//arrayOfString was causing an error since you used it twice, i just renamed it to arrayStrings so code will run
 
-let arrayOfStrings = ["hello" , "what", "is", "up", "dude"]
-let getMultipleLengths = function(arrayOfStrings) {
+let arrayStrings = ["hello" , "what", "is", "up", "dude"]
+let getMultipleLengths = function(arrayStrings) {
   let stringLength = []
-  for (let i = 0; i < arrayOfStrings.length; i++) {
-    stringLength.push(arrayOfStrings[i].length)
+  for (let i = 0; i < arrayStrings.length; i++) {
+    stringLength.push(arrayStrings[i].length)
   }
   return stringLength
 }
-console.log(getMultipleLengths(arrayOfStrings))
+console.log(getMultipleLengths(arrayStrings))
 
 // G. maxOfThree
 
@@ -355,6 +375,12 @@ if (num1 >= num2 && num1 >= num3) {
 console.log(largest)
 
 // H. printLongestWord
+//nice!! i did this with the sorted method, so just another way to solve it
+// const printLongestWord = (arr) => {
+//   const sorted = arr.sort((a, b) => b.length - a.length)
+//   return sorted[0]
+
+// }
 
 let arrayOfStrings = ["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]
 let printLongestWord = function(arrayOfStrings) {
@@ -456,7 +482,7 @@ console.log(user)
     person.age = ++person.age;
     person.name = person.name.toUpperCase()
   }
-  oldAndLoud(user)
+oldAndLoud(user)
   //oldAndLoud(user.friend) checking to see if values change
   console.log(user)
   //console.log(user.friend) checking to see if values change
